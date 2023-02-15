@@ -1,16 +1,19 @@
-public void setup()
-{
+public void draw (){
+ 
+fill(0,0,250);
 
+sierpinski(200,200,200);
 }
-public void draw()
-{
-
+public void setup(){
+size(500,500);
 }
-public void mouseDragged()//optional
-{
-
+public void sierpinski(int len, int x, int y){
+   if(len<=20){
+     triangle(x,y,x+len,y+len,x+2*len,y);
 }
-public void sierpinski(int x, int y, int len) 
-{
-
+else{
+  sierpinski(len/2,x,y);
+  sierpinski(len/2,x+len/2,y);
+  sierpinski(len/2,x+len/2,y+len/2);
+}
 }
